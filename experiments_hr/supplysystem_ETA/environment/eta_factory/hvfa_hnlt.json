@@ -1,0 +1,89 @@
+{
+  "system": [
+    {
+      "name": "hvfa_hnlt",
+      "servers": {
+        "glt": {
+          "url": "opc.tcp://192.168.116.86:4840",
+          "protocol": "opcua"
+        }
+      },
+      "nodes": [
+        {
+          "name": "fLowerTemperature",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNLT.HVFASystem.HVFAStorage.localState.fLowerTemperature",
+          "dtype": "float"
+        },
+        {
+          "name": "fUpperTemperature",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNLT.HVFASystem.HVFAStorage.localState.fUpperTemperature",
+          "dtype": "float"
+        },
+        {
+          "name": "bAlgorithmModeActivated",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNLT.HVFASystem.control.bAlgorithmModeActivated",
+          "dtype": "bool"
+        },
+        {
+          "name": "bSetStatusOnAlgorithm",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNLT.HVFASystem.control.bSetStatusOnAlgorithm",
+          "dtype": "bool"
+        },
+        {
+          "name": "bStatusOn",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNLT.HVFASystem.controlState.bStatusOn",
+          "dtype": "bool"
+        },
+        {
+          "name": "fSetPointAlgorithm",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNLT.HVFASystem.setSetPoint.fSetPointAlgorithm",
+          "dtype": "float"
+        },
+        {
+          "name": "bLoadingAlgorithm",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNLT.HVFASystem.localSetParameters.bLoadingAlgorithm",
+          "dtype": "bool"
+        },
+        {
+          "name":"bLoading",
+          "server":"glt",
+          "opc_id":"ns=4;s=MAIN.HNLT.HVFASystem.localState.bLoading",
+          "dtype":"bool"
+        }
+      ],
+      "activation_indicators": {
+        "bStatusOn": {
+          "compare": "==",
+          "value": true
+        }
+      },
+      "observe": [
+        "bStatusOn",
+        "fLowerTemperature",
+        "fUpperTemperature",
+        "bLoading"
+      ],
+      "actions": {
+        "activate": {
+          "bSetStatusOnAlgorithm": true
+        },
+        "deactivate": {
+          "bSetStatusOnAlgorithm": false
+        },
+        "init": {
+          "bAlgorithmModeActivated": true
+        },
+        "close": {
+          "bAlgorithmModeActivated": false
+        }
+      }
+    }
+  ]
+}

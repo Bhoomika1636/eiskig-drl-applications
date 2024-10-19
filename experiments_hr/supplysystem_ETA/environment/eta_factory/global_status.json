@@ -1,0 +1,41 @@
+{
+  "system": [
+    {
+      "name": "global_status",
+      "servers": {
+        "glt": {
+          "url": "opc.tcp://192.168.116.86:4840",
+          "protocol": "opcua"
+        }
+      },
+      "nodes": [
+        {
+          "name": "Optimierer_Freigabe",
+          "server": "glt",
+          "opc_id": "ns=4;s=.GA_global.Optimierer_Freigabe",
+          "dtype": "bool"
+        },
+        {
+          "name": "Quittierung",
+          "server": "glt",
+          "opc_id": "ns=4;s=.GA_global.Quittierung",
+          "dtype": "bool"
+        },
+        {
+          "name": "Stoerung",
+          "server": "glt",
+          "opc_id": "ns=4;s=.GA_global.Stoerung",
+          "dtype": "bool"
+        },
+        {
+          "name": "Warnung",
+          "server": "glt",
+          "opc_id": "ns=4;s=.GA_global.Warnung",
+          "dtype": "bool"
+        }
+      ],
+      "observe": [
+      ]
+    }
+  ]
+}

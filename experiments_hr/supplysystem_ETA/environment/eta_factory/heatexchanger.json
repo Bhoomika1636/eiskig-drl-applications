@@ -1,0 +1,69 @@
+{
+  "system": [
+    {
+      "name": "heatexchanger",
+      "servers": {
+        "glt": {
+          "url": "opc.tcp://192.168.116.86:4840",
+          "protocol": "opcua"
+        }
+      },
+      "nodes": [
+        {
+          "name": "bAlgorithmModeActivated",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT_HNLT.HeatExchanger1System.control.bAlgorithmModeActivated",
+          "dtype": "bool"
+        },
+        {
+          "name": "bSetStatusOnAlgorithm",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT_HNLT.HeatExchanger1System.control.bSetStatusOnAlgorithm",
+          "dtype": "bool"
+        },
+        {
+          "name": "bStatusOn",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT_HNLT.HeatExchanger1System.controlState.bStatusOn",
+          "dtype": "bool"
+        },
+        {
+          "name": "fSetPointAlgorithm",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT_HNLT.HeatExchanger1System.setSetPoint.fSetPointAlgorithm",
+          "dtype": "float"
+        },
+        {
+          "name": "fHeatFlowRate",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT_HNLT.HeatExchanger1System.WMZ215.sensorState.fHeatFlowRate",
+          "dtype": "float"
+        }
+      ],
+      "activation_indicators": {
+        "bStatusOn": {
+          "compare": "==",
+          "value": true
+        }
+      },
+      "observe": [
+        "bStatusOn",
+        "fHeatFlowRate"
+      ],
+      "actions": {
+        "activate": {
+          "bSetStatusOnAlgorithm": true
+        },
+        "deactivate": {
+          "bSetStatusOnAlgorithm": false
+        },
+        "init": {
+          "bAlgorithmModeActivated": true
+        },
+        "close": {
+          "bAlgorithmModeActivated": false
+        }
+      }
+    }
+  ]
+}

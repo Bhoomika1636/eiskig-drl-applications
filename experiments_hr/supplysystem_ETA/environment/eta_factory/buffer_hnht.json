@@ -1,0 +1,38 @@
+{
+  "system": [
+    {
+      "name": "buffer_hnht",
+      "servers": {
+        "glt": {
+          "url": "opc.tcp://192.168.116.86:4840",
+          "protocol": "opcua"
+        }
+      },
+      "nodes": [
+        {
+          "name": "fLowerTemperature",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.BufferStorage.localState.fLowerTemperature",
+          "dtype": "float"
+        },
+        {
+          "name": "fMidTemperature",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.BufferStorage.localState.fMidTemperature",
+          "dtype": "float"
+        },
+        {
+          "name": "fUpperTemperature",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.BufferStorage.localState.fUpperTemperature",
+          "dtype": "float"
+        }
+      ],
+      "observe": [
+        "fLowerTemperature",
+        "fMidTemperature",
+        "fUpperTemperature"
+      ]
+    }
+  ]
+}
