@@ -1,0 +1,4 @@
+BoschCoolingSystem_optimize_rt is the folder with which the runtime optimisation was carried out.
+was performed. The environment script boschSystem.py has been adapted. The main script is
+optimize_runtime.py. Could also be interesting for other applications. For example
+Parameter optimisation also for simulation accuracy (similarly feasible with a few changes)
