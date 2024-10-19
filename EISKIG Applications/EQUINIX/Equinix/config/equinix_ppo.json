@@ -1,0 +1,98 @@
+{
+    "setup": {
+        "environment_import": "environment.equinix.Equinix",
+        "agent_import": "stable_baselines3.ppo.ppo.PPO",
+        "vectorizer_import": "stable_baselines3.common.vec_env.SubprocVecEnv",
+        "policy_import": "stable_baselines3.ppo.MlpPolicy",
+        "tensorboard_log": true,
+        "monitor_wrapper": true,
+        "norm_wrapper_obs": true,
+        "norm_wrapper_reward": true
+    },
+    "paths": {
+        "relpath_scenarios": "data/",
+        "relpath_results": "results/"
+    },
+    "settings": {
+        "sampling_time": 60,
+        "save_model_every_x_episodes": 100,
+        "episode_duration": 259200,
+        "n_episodes_learn": 1000,
+        "n_episodes_play": 10,
+        "n_environments": 4,
+        "plot_interval": 100,
+        "verbose": 2,
+        "seed": 117
+    },
+    "environment_specific": {
+        "variant": "reduced_state",
+        "discretize_action_space": false,
+        "reward_shaping": false,
+        "temperature_difference_top_bottom": 10,
+        "scenario_time_begin": "2017-01-01 00:00",
+        "scenario_time_end": "2018-01-01 00:00",
+        "random_sampling": true,
+        "poweron_cost_chiller1": 1.0,
+        "poweron_cost_chiller2": 1.0,
+        "poweron_cost_coolingtower": 1.0,
+        "poweron_cost_adiabatic": 1.0,
+        "abort_costs": 50000,
+        "policyshaping_costs": 1.0,
+        "temperature_cost_T_Serverroom_min": 289.15,
+        "temperature_cost_T_Serverroom_max": 292.15,
+        "temperature_cost_cool": 1,
+        "temperature_reward_cool": 0,
+        "power_cost_max": 320000,
+        "tax_el_per_kwh": 0.10,
+        "peak_cost_per_kw": 1.0,
+        "scenario_files":
+            [{
+                "path": "Heat_2017.csv",
+                "interpolation_method": "interpolate",
+                "resample_method": "asfreq",
+                "time_conversion_str": "%Y-%m-%d %H:%M",
+                "scale_factors": {}
+            },
+            {
+                "path": "EnergyMarkets_2017.csv",
+                "interpolation_method": "ffill",
+                "resample_method": "asfreq",
+                "time_conversion_str": "%Y-%m-%d %H:%M",
+                "scale_factors": {"electrical_energy_price": 0.001,
+                                  "gas_price": 0.001}
+            },
+            {
+                "path": "Weather_Frankfurt_2017.csv",
+                "interpolation_method": "interpolate",
+                "resample_method": "asfreq",
+                "time_conversion_str": "%Y-%m-%d %H:%M",
+                "scale_factors": {"air_pressure": 1,
+                                  "air_temperature": 1,
+                                  "relative_air_humidity": 1,
+                                  "rain_indicator": 1,
+                                  "rainfall": 1,
+                                  "wind_direction": 1,
+                                  "wind_speed": 1,
+                                  "clouds": 1,
+                                  "global_radiation": 1,
+                                  "direct_radiation": 1,
+                                  "diffuse_radiation": 1}
+            }]
+    },
+    "agent_specific": {
+        "gamma": 0.99,
+        "n_steps": 256,
+        "ent_coef": 0.01,
+        "learning_rate": 0.00020,
+        "vf_coef": 0.5,
+        "max_grad_norm": 0.5,
+        "gae_lambda": 0.95,
+        "batch_size": 256,
+        "n_epochs": 4,
+        "clip_range": 0.2,
+        "verbose": 1,
+        "policy_kwargs": {
+            "net_arch": [500, 400, 300]
+        }
+    }
+}
