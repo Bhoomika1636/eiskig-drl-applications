@@ -1,0 +1,39 @@
+{
+    "setup": {
+        "environment_import": "environment.AFA_system.AFA_System",
+        "agent_import": "controller.rule_based_controller.RuleBasedController",
+        "norm_wrapper_obs": false,
+        "norm_wrapper_reward": false
+    },
+    "paths": {
+        "relpath_scenarios": "data/",
+        "relpath_results": "results/"
+    },
+    "settings": {
+        "sampling_time": 180,
+        "episode_duration": 259200,
+        "n_episodes_play": 1,
+        "n_environments": 1,
+        "plot_interval": 1,
+        "verbose": 2,
+        "seed": 123
+    },
+    "environment_specific": {
+        "discretize_action_space": false,
+        "reward_shaping": false,
+        "temperature_start_west": 303.15, 
+        "temperature_start_east": 303.15,
+        "scenario_time_begin": "2024-05-27 10:00",
+        "scenario_time_end": "2024-05-29 23:50",
+        "random_sampling": true,
+        "scenario_files":
+            [{
+                "path": "Aufzeichnung_2705_2905 - 14Uhr.csv",
+                "interpolation_method": "ffill",
+                "resample_method": "asfreq",
+                "time_conversion_str": "%d.%m.%Y %H:%M"
+            }]
+    },
+    "agent_specific": {
+    }
+}
