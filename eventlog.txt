@@ -1,0 +1,78 @@
+Event iteration details;;;;Event summary;;;Triggering expression;;Bifurcation warning
+Iteration;Event type;Expression;Result;Time;Type(s) logged in dslog;Minor/Failed;Expression;Crossing;Expression;Crossing;Residual
+
+1;4;expansion_tank_2.m > 1E-08;true
+1;4;Pumpe_Chiller2.idealPump.volume.medium.T >= 243.14999999999998;true
+1;4;Pumpe_Chiller2.idealPump.volume.medium.T <= 373.15;true
+1;4;Pumpe_Chiller1.idealPump.volume.medium.T >= 243.14999999999998;true
+1;4;Pumpe_Chiller1.idealPump.volume.medium.T <= 373.15;true
+1;4;CoolingTower.volume.medium.T >= 243.14999999999998;true
+1;4;CoolingTower.volume.medium.T <= 373.15;true
+1;4;heatexchanger.volume.medium.T >= 243.14999999999998;true
+1;4;heatexchanger.volume.medium.T <= 373.15;true
+1;4;Glykolpumpen.idealPump.volume.medium.T >= 243.14999999999998;true
+1;4;Glykolpumpen.idealPump.volume.medium.T <= 373.15;true
+1;4;heatexchanger.volume1.medium.T >= 263.15;true
+1;4;heatexchanger.volume1.medium.T <= 403.15;true
+1;4;Wasserpumpen.idealPump.volume.medium.T >= 263.15;true
+1;4;Wasserpumpen.idealPump.volume.medium.T <= 403.15;true
+1;4;Chiller2.compressionChiller_OneCycle.limiter.u < 240.0;false
+1;4;CoolingTower.volume.vessel_ps_static[1] >= 0.0;true
+1;4;pID_lim_Controller_T_target_variable.PID1.limiter.u > 1.0;true
+1;4;CoolingTower.zeroLimiter.u > 1.0;false
+1;4;CoolingTower.zeroLimiter.u < 0.5;false
+1;4;pID_lim_Controller_T_target_variable1.PID1.limiter.u > 1.0;true
+1;4;Chiller1.compressionChiller_OneCycle.zeroLimiter.u > 1.0;false
+1;4;Chiller1.compressionChiller_OneCycle.zeroLimiter.u < 0.0;false
+1;4;pID_lim_Controller_T_target_variable2.PID1.limiter.u > 1.0;true
+1;4;Chiller2.compressionChiller_OneCycle.zeroLimiter.u > 1.0;false
+1;4;Chiller2.compressionChiller_OneCycle.zeroLimiter.u < 0.0;false
+1;4;DataCenterRoom.dynBal.medium.T >= 263.15;true
+1;4;DataCenterRoom.dynBal.medium.T <= 403.15;true
+1;4;CoolingTower.conditionCheck.T_in < 274.15;false
+1;4;CoolingTower.conditionCheck.T_in > 368.15;false
+1;1;time < 0;
+1;4;realToBoolean.u >= 1.0;false
+1;4;Chiller1.compressionChiller_OneCycle.conditionCheck_OneTemperature.T_air_in < 200.0;false
+1;4;Chiller1.compressionChiller_OneCycle.conditionCheck_OneTemperature.T_air_in > 320.0;false
+1;4;CoolingTower.coolingCalculationHTK.m_flow_air > 0.01;true
+1;4;CoolingTower.coolingCalculationHTK.u_adiabatic <= 0.0;true
+1;4;realToBoolean1.u >= 1.0;false
+1;4;Chiller2.compressionChiller_OneCycle.conditionCheck_OneTemperature.T_air_in < 200.0;false
+1;4;Chiller2.compressionChiller_OneCycle.conditionCheck_OneTemperature.T_air_in > 320.0;false
+1;4;Heat_Data_Center_Room.r;496847.7628804622
+1;4;Heat_Data_Center_Room.state[1];1370543389
+1;4;Heat_Data_Center_Room.state[2];1431742030
+1;4;Heat_Data_Center_Room.state[3];-614784758
+1;4;Heat_Data_Center_Room.state[4];1224057868
+1;4;Chiller1.compressionChiller_OneCycle.volume1.medium.T >= 243.14999999999998;true
+1;4;Chiller1.compressionChiller_OneCycle.volume1.medium.T <= 373.15;true
+1;4;Chiller2.compressionChiller_OneCycle.volume1.medium.T >= 243.14999999999998;true
+1;4;Chiller2.compressionChiller_OneCycle.volume1.medium.T <= 373.15;true
+1;4;Glykolpumpen.idealPump.m_flow_small_limiter.u > 1E+60;false
+1;4;Glykolpumpen.idealPump.m_flow_small_limiter.u < 0.00572;true
+1;4;Pumpe_Chiller1.idealPump.m_flow_small_limiter.u > 1E+60;false
+1;4;Pumpe_Chiller1.idealPump.m_flow_small_limiter.u < 0.00286;true
+1;4;Pumpe_Chiller2.idealPump.m_flow_small_limiter.u > 1E+60;false
+1;4;Pumpe_Chiller2.idealPump.m_flow_small_limiter.u < 0.00286;true
+1;4;Wasserpumpen.idealPump.m_flow_small_limiter.u > 1E+60;false
+1;4;Wasserpumpen.idealPump.m_flow_small_limiter.u < 0.00464;true
+1;4;Chiller1.compressionChiller_OneCycle.volume1.vessel_ps_static[1] >= 0.0;true
+1;4;Chiller2.compressionChiller_OneCycle.volume1.vessel_ps_static[1] >= 0.0;true
+1;4;Glykolpumpen.idealPump.volume.vessel_ps_static[1] >= 0.0;true
+1;4;Pumpe_Chiller1.idealPump.volume.vessel_ps_static[1] >= 0.0;true
+1;4;Pumpe_Chiller2.idealPump.volume.vessel_ps_static[1] >= 0.0;true
+2;4;Heat_Data_Center_Room.r;496847.7628804622
+2;4;Heat_Data_Center_Room.state[1];1370543389
+2;4;Heat_Data_Center_Room.state[2];1431742030
+2;4;Heat_Data_Center_Room.state[3];-614784758
+2;4;Heat_Data_Center_Room.state[4];1224057868
+2;1;sample(0,600);
+2;4;Heat_Data_Center_Room.state[1];-614784758
+2;4;Heat_Data_Center_Room.state[2];1224057868
+2;4;Heat_Data_Center_Room.state[3];-513033789
+2;4;Heat_Data_Center_Room.state[4];-2088663279
+;;;;0;Initialization;0
+
+;;;;0;Termination;0
+
