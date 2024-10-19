@@ -1,0 +1,30 @@
+{
+    "setup": {
+        "environment_import": "environment.RL_Test_WT.Test_WT",
+        "agent_import": "controller.rule_based_controller.RuleBasedController",
+        "norm_wrapper_obs": false,
+        "norm_wrapper_reward": false
+    },
+    "paths": {
+        "relpath_results": "results/"
+    },
+    "settings": {
+        "sampling_time": 180,
+        "episode_duration": 259200,
+        "n_episodes_learn": 1000,
+        "n_episodes_play": 1,
+        "n_environments": 1,
+        "plot_interval": 100,
+        "verbose": 2,
+        "seed": 123
+    },
+    "environment_specific": {
+        "discretize_action_space": false,
+        "scenario_time_begin": "2017-01-01 00:00",
+        "scenario_time_end": "2017-12-27 00:00",
+        "random_sampling": true,
+        "abort_costs": 50000
+    },
+    "agent_specific": {
+    }
+}
