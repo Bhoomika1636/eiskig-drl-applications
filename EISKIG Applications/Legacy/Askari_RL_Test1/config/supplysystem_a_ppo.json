@@ -1,0 +1,46 @@
+{
+    "setup": {
+        "environment_import": "environment.RL_Test_WT.Test_WT",
+        "agent_import": "stable_baselines3.ppo.ppo.PPO",
+        "vectorizer_import": "stable_baselines3.common.vec_env.SubprocVecEnv",
+        "policy_import": "stable_baselines3.ppo.MlpPolicy",
+        "tensorboard_log": true,
+        "monitor_wrapper": true,
+        "norm_wrapper_obs": true,
+        "norm_wrapper_reward": true
+    },
+    "paths": {
+        "relpath_results": "results/"
+    },
+    "settings": {
+        "sampling_time": 100,
+        "save_model_every_x_episodes": 100,
+        "episode_duration": 259200,
+        "n_episodes_learn": 1000,
+        "n_episodes_play": 10,
+        "n_environments": 4,
+        "plot_interval": 100,
+        "verbose": 2,
+        "seed": 123
+    },
+    "environment_specific": {
+        "discretize_action_space": false,
+        "scenario_time_begin": "2017-01-01 00:00",
+        "scenario_time_end": "2017-12-27 00:00",
+        "random_sampling": true,
+        "abort_costs": 50000
+    },
+    "agent_specific": {
+        "gamma": 0.99,
+        "n_steps": 256,
+        "ent_coef": 0.01,
+        "learning_rate": 0.00020,
+        "vf_coef": 0.5,
+        "max_grad_norm": 0.5,
+        "gae_lambda": 0.95,
+        "batch_size": 256,
+        "n_epochs": 4,
+        "clip_range": 0.2,
+        "verbose": 1
+    }
+}
