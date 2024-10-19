@@ -1,0 +1,15 @@
+XS_steilheit_regler: 20
+T_goal: 17
+gw_pump_führung: 15
+gw_KT_führung_stufe1: 30
+gw_KT_führung_stufe2: 40
+gw_pump_folge1: 50
+gw_KT_folge1_stufe1: 60
+gw_KT_folge1_stufe2: 70
+gw_pump_folge2: 80
+gw_KT_folge2_stufe2: 90
+gw_KT_folge2_stufe1: 95
+hysteresis_gw_rückschaltung: 13
+XS_Verzögerung_Pumpen_und_Rest: 120
+XS_Verzögerung_KT_führung_stufe1: 30
+
