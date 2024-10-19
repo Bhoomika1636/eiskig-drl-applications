@@ -1,0 +1,52 @@
+{
+    "setup": {
+        "environment_import": "environment.supplysystem_ETA_live.SupplysystemETA",
+        "agent_import": "controller.rule_based_controller.RuleBasedController"
+    },
+    "paths": {
+        "relpath_scenarios": "data/",
+        "relpath_results": "results/"
+    },
+    "settings": {
+        "sampling_time": 30,
+        "episode_duration": 28800,
+        "n_episodes_play": 1,
+        "n_environments": 1,
+        "verbose": 2,
+        "seed": 123
+    },
+    "environment_specific": {
+        "scenario_time_begin": "2021-12-01 06:00",
+        "scenario_time_end": "2021-12-01 07:00",
+        "allow_policy_shaping":false,
+        "allow_limiting_CHP_switches":false,
+        "IsRuleBasedController":true,
+        "extended_observations":false,
+        "constant_gas_price": 0.048,
+        "offset_policy_shaping_threshold":-2,
+        "rel_path_live_connect_config":"eta_factory/",
+        "live_connect_config_names": ["ambient.json",
+                                        "boiler.json",
+                                        "buffer_cn.json",
+                                        "buffer_hnht.json",
+                                        "buffer_hnlt.json",
+                                        "chp1.json",
+                                        "chp2.json",
+                                        "e_chiller.json",
+                                        "heatexchanger.json",
+                                        "heatpump.json",
+                                        "hvfa_cn.json",
+                                        "hvfa_hnlt.json",
+                                        "outer_capillarytubemats.json",
+                                        "time.json",
+                                        "vsi.json"],
+            "HNHT_Temperature_Limit_upper":85,
+            "HNHT_Temperature_Limit_lower":45,
+            "HNLT_Temperature_Limit_upper":45,
+            "HNLT_Temperature_Limit_lower":10,
+            "CN_Temperature_Limit_upper":25,
+            "CN_Temperature_Limit_lower":10
+    },
+    "agent_specific": {
+    }
+}

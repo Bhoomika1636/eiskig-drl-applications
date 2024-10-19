@@ -1,0 +1,62 @@
+{
+  "system": [
+    {
+      "name": "boiler",
+      "servers": {
+        "glt": {
+          "url": "opc.tcp://192.168.116.86:4840",
+          "protocol": "opcua"
+        }
+      },
+      "nodes": [
+        {
+          "name": "bAlgorithmModeActivated",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.CondensingBoilerSystem.control.bAlgorithmModeActivated",
+          "dtype": "bool"
+        },
+        {
+          "name": "bSetStatusOnAlgorithm",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.CondensingBoilerSystem.control.bSetStatusOnAlgorithm",
+          "dtype": "bool"
+        },
+        {
+          "name": "bStatusOn",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.CondensingBoilerSystem.controlState.bStatusOn",
+          "dtype": "bool"
+        },
+        {
+          "name": "fSetPointAlgorithm",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.CondensingBoilerSystem.setSetPoint.fSetPointAlgorithm",
+          "dtype": "float"
+        }
+      ],
+      "activation_indicators": {
+        "bStatusOn": {
+          "compare": "==",
+          "value": true
+        }
+      },
+      "observe": [
+        "bStatusOn"
+      ],
+      "actions": {
+        "activate": {
+          "bSetStatusOnAlgorithm": true
+        },
+        "deactivate": {
+          "bSetStatusOnAlgorithm": false
+        },
+        "init": {
+          "bAlgorithmModeActivated": true
+        },
+        "close": {
+          "bAlgorithmModeActivated": false
+        }
+      }
+    }
+  ]
+}

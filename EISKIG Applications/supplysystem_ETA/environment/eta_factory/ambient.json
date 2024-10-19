@@ -1,0 +1,52 @@
+{
+  "system": [
+    {
+      "name": "ambient",
+      "servers": {
+        "glt": {
+          "url": "opc.tcp://192.168.116.86:4840",
+          "protocol": "opcua"
+        }
+      },
+      "nodes": [
+        {
+          "name": "fOutsideTemperature",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.Ambient.localState.fOutsideTemperature",
+          "dtype": "float"
+        },
+        {
+          "name": "fOutsideTemperature_Mean",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.Ambient.localState.fOutsideTemperature_Mean",
+          "dtype": "float"
+        },
+        {
+          "name": "bRain",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.Ambient.localState.bRain",
+          "dtype": "bool"
+        },
+        {
+          "name": "fWindSpeed",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.Ambient.localState.fWindSpeed",
+          "dtype": "float"
+        },
+        {
+          "name": "fDawn",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.Ambient.localState.fDawn",
+          "dtype": "float"
+        }
+      ],
+      "observe": [
+        "fOutsideTemperature",
+        "fOutsideTemperature_Mean",
+        "bRain",
+        "fWindSpeed",
+        "fDawn"
+      ]
+    }
+  ]
+}

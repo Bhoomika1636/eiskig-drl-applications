@@ -1,0 +1,81 @@
+{
+    "setup": {
+        "environment_import": "environment.supplysystem_ETA_live.SupplysystemETA",
+        "agent_import": "stable_baselines3.ppo.ppo.PPO",
+        "vectorizer_import": "stable_baselines3.common.vec_env.SubprocVecEnv",
+        "policy_import": "stable_baselines3.ppo.MlpPolicy",
+        "tensorboard_log": true,
+        "monitor_wrapper": true,
+        "norm_wrapper_obs": true,
+        "norm_wrapper_reward": true
+    },
+    "paths": {
+        "relpath_scenarios": "data/",
+        "relpath_results": "results/"
+    },
+    "settings": {
+        "sampling_time": 30,
+        "save_model_every_x_episodes": 10,
+        "episode_duration": 259200,
+        "n_episodes_learn": 3000,
+        "n_episodes_play": 1,
+        "n_environments": 1,
+        "plot_interval": 1,
+        "verbose": 2,
+        "seed": 123
+    },
+    "environment_specific": {
+        "extended_observations": false,
+        "constant_gas_price": 0.048,
+        "allow_policy_shaping":false,
+        "allow_limiting_CHP_switches":false,
+        "IsRuleBasedController":false,
+        "offset_policy_shaping_threshold":-2,
+        "rel_path_live_connect_config":"eta_factory/",
+        "live_connect_config_names": ["ambient.json",
+                                        "boiler.json",
+                                        "buffer_cn.json",
+                                        "buffer_hnht.json",
+                                        "buffer_hnlt.json",
+                                        "chp1.json",
+                                        "chp2.json",
+                                        "e_chiller.json",
+                                        "heatexchanger.json",
+                                        "heatpump.json",
+                                        "hvfa_cn.json",
+                                        "hvfa_hnlt.json",
+                                        "outer_capillarytubemats.json",
+                                        "time.json",
+                                        "vsi.json"],
+        "HNHT_Temperature_Limit_upper":85,
+        "HNHT_Temperature_Limit_lower":45,
+        "HNLT_Temperature_Limit_upper":45,
+        "HNLT_Temperature_Limit_lower":10,
+        "CN_Temperature_Limit_upper":25,
+        "CN_Temperature_Limit_lower":10,
+        "scenario_time_begin": "2017-01-01 00:00",
+        "scenario_time_end": "2017-12-27 00:00",
+        "HNHT_temperature_reward_min_T":45,
+        "HNHT_temperature_reward_max_T":85,
+        "HNLT_temperature_reward_min_T":10,
+        "HNLT_temperature_reward_max_T":45,
+        "CN_temperature_reward_min_T":10,
+        "CN_temperature_reward_max_T":25
+    },
+    "agent_specific": {
+        "gamma": 0.99,
+        "n_steps": 256,
+        "ent_coef": 0.01,
+        "learning_rate": 0.00020,
+        "vf_coef": 0.5,
+        "max_grad_norm": 0.5,
+        "gae_lambda": 0.95,
+        "batch_size": 256,
+        "n_epochs": 4,
+        "clip_range": 0.2,
+        "verbose": 1,
+        "policy_kwargs": {
+            "net_arch": [500, 400, 300]
+        }
+    }
+}

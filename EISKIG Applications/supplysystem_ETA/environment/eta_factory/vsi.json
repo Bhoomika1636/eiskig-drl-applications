@@ -1,0 +1,96 @@
+{
+  "system": [
+    {
+      "name": "vsi",
+      "servers": {
+        "glt": {
+          "url": "opc.tcp://192.168.116.86:4840",
+          "protocol": "opcua"
+        }
+      },
+      "nodes": [
+        {
+          "name": "fLowerTemperature",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.VSIStorageSystem.VSIStorage.localState.fLowerTemperature",
+          "dtype": "float"
+        },
+        {
+          "name": "fMidTemperature",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.VSIStorageSystem.VSIStorage.localState.fMidTemperature",
+          "dtype": "float"
+        },
+        {
+          "name": "fUpperTemperature",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.VSIStorageSystem.VSIStorage.localState.fUpperTemperature",
+          "dtype": "float"
+        },
+        {
+          "name": "bAlgorithmModeActivated",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.VSIStorageSystem.control.bAlgorithmModeActivated",
+          "dtype": "bool"
+        },
+        {
+          "name": "bSetStatusOnAlgorithm",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.VSIStorageSystem.control.bSetStatusOnAlgorithm",
+          "dtype": "bool"
+        },
+        {
+          "name": "bStatusOn",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.VSIStorageSystem.controlState.bStatusOn",
+          "dtype": "bool"
+        },
+        {
+          "name": "fSetPointAlgorithm",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.VSIStorageSystem.setSetPoint.fSetPointAlgorithm",
+          "dtype": "float"
+        },
+        {
+          "name": "bLoadingAlgorithm",
+          "server": "glt",
+          "opc_id": "ns=4;s=MAIN.HNHT.VSIStorageSystem.localSetParameters.bLoadingAlgorithm",
+          "dtype": "bool"
+        },
+        {
+          "name":"bLoading",
+          "server":"glt",
+          "opc_id":"ns=4;s=MAIN.HNHT.VSIStorageSystem.localState.bLoading",
+          "dtype":"bool"
+        }
+      ],
+      "activation_indicators": {
+        "bStatusOn": {
+          "compare": "==",
+          "value": true
+        }
+      },
+      "observe": [
+        "bStatusOn",
+        "fLowerTemperature",
+        "fMidTemperature",
+        "fUpperTemperature",
+        "bLoading"
+      ],
+      "actions": {
+        "activate": {
+          "bSetStatusOnAlgorithm": true
+        },
+        "deactivate": {
+          "bSetStatusOnAlgorithm": false
+        },
+        "init": {
+          "bAlgorithmModeActivated": true
+        },
+        "close": {
+          "bAlgorithmModeActivated": false
+        }
+      }
+    }
+  ]
+}
